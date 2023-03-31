@@ -1,6 +1,6 @@
-# ansible-endoplasm
+# endoplasm-setup
 
-[Ansible](https://www.ansible.com/) configuration for my Linux workstations
+Automated configuration setup for my Linux workstations
 
 ## Requirements
 
