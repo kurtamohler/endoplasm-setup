@@ -1,5 +1,10 @@
 #!/bin/bash
+
+# Exit script if any errors happen
 set -e
+
+# Print each command before running it
+set -x
 
 # Update apt packages
 sudo apt update -y
@@ -57,6 +62,6 @@ git config --global core.editor "vim"
 cat config/bashrc-additions.sh >> $HOME/.bashrc
 
 # Add webp support for image viewer
-sudo add-apt-repository ppa:helkaluin/webp-pixbuf-loader
+sudo add-apt-repository -y ppa:helkaluin/webp-pixbuf-loader
 sudo apt update -y
 sudo apt install -y webp-pixbuf-loader
