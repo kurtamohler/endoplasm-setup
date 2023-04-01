@@ -34,6 +34,12 @@ ACCEPT_EULA=Y sudo apt install -y \
 #sudo apt update -y
 #sudo apt install -y --install-recommends winehq-staging
 
+# Install vagrant
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update -y 
+sudo apt install vagrant -y
+
 # Install Chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 if ! sudo dpkg -i /tmp/chrome.deb; then
