@@ -1,0 +1,13 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pip
+  - git
+  - pytorch
+  - numpy
+  - jupyter
+  - pip:
+    - matplotlib
+    - gnome-extensions-cli
