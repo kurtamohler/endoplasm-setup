@@ -11,7 +11,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install apt packages
-sudo apt install -y \
+ACCEPT_EULA=Y sudo apt install -y \
   vim \
   ubuntu-restricted-extras \
   virtualbox \
@@ -49,19 +49,27 @@ conda activate base
 conda env create -n main -f config/conda-main-env.yml
 conda activate main
 
-# Install quarter windows GNOME extension
-gnome-extensions-cli install quarterwindows@troyready.com
-gnome-extensions enable quarterwindows@troyready.com
+# Append various settings to `~/.bashrc`
+cat config/bashrc-additions.sh >> $HOME/.bashrc
 
 # Configure git
 git config --global user.name "Kurt Mohler"
 git config --global user.email kurtamohler@gmail.com
 git config --global core.editor "vim"
 
-# Append various settings to `~/.bashrc`
-cat config/bashrc-additions.sh >> $HOME/.bashrc
-
 # Add webp support for image viewer
 sudo add-apt-repository -y ppa:helkaluin/webp-pixbuf-loader
 sudo apt update -y
 sudo apt install -y webp-pixbuf-loader
+
+# Install quarter windows GNOME extension
+#gnome-extensions-cli install quarterwindows@troyready.com
+wget -O /tmp/quarterwindows@troyready.com-v5.zip https://github.com/troyready/quarterwindows/releases/download/v5/quarterwindows@troyready.com-v5.zip
+gnome-extensions install --force /tmp/quarterwindows@troyready.com-v5.zip
+killall -SIGQUIT gnome-shell
+# TODO: I want to find a way to check if gnome-shell is back up, but it's hard
+#       to find info about how to do that
+sleep 10
+gnome-extensions enable quarterwindows@troyready.com
+
+printf "\n\nConfiguration is complete! Please restart your machine\n"
