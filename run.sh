@@ -74,6 +74,9 @@ sudo add-apt-repository -y ppa:helkaluin/webp-pixbuf-loader
 sudo apt update -y
 sudo apt install -y webp-pixbuf-loader
 
+# Set default mime apps
+cp config/mimeapps.list ~/.config/mimeapps.list
+
 # Install quarter windows GNOME extension
 wget -O /tmp/quarterwindows@troyready.com-v5.zip https://github.com/troyready/quarterwindows/releases/download/v5/quarterwindows@troyready.com-v5.zip
 gnome-extensions install --force /tmp/quarterwindows@troyready.com-v5.zip
