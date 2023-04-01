@@ -12,6 +12,23 @@ through the scripts and understand them before running.
 Start with a clean installation of [`Pop!_OS 22.04 LTS
 (NVIDIA)`](https://pop.system76.com/).
 
+## (Optional) Change hostname to whatever you want
+
+It has to be changed in two places. First run:
+
+```bash
+sudo hostnamectl set-hostname [your hostname]
+```
+
+Then sudo edit `/etc/hosts`, changing all instances of `pop-os` to your hostname.
+Here's an example of what it would look like:
+
+```
+127.0.0.1 localhost
+::1   localhost
+127.0.1.1 [your hostname].localdomain  [your hostname]
+```
+
 ## Installation
 
 Run the following:
