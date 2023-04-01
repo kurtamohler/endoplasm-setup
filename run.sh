@@ -18,7 +18,11 @@ ACCEPT_EULA=Y sudo apt install -y \
   vim \
   ubuntu-restricted-extras \
   virtualbox \
-  gdb
+  gdb \
+  gimp \
+  okular \
+  htop \
+  lm-sensors
 
 # Install wine (https://wiki.winehq.org/Ubuntu)
 # TODO: This doesn't work because the repository is not signed. Something must have
@@ -30,13 +34,18 @@ ACCEPT_EULA=Y sudo apt install -y \
 #sudo apt update -y
 #sudo apt install -y --install-recommends winehq-staging
 
+# Install Chrome
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+if ! sudo dpkg -i /tmp/chrome.deb; then
+  sudo apt -f install -y
+fi
 
 # Add default directories in `$HOME`
-mkdir -p ~/local
-mkdir -p ~/develop
-mkdir -p ~/bin
-mkdir -p ~/tmp
-mkdir -p ~/mnt
+mkdir -p $HOME/local
+mkdir -p $HOME/develop
+mkdir -p $HOME/bin
+mkdir -p $HOME/tmp
+mkdir -p $HOME/mnt
 
 # Configure GNOME settings
 dconf load / < config/dconf-settings.ini
@@ -76,5 +85,10 @@ gnome-extensions enable quarterwindows@troyready.com
 
 # Install `~/bin` scripts
 cp -r home-bin/* $HOME/bin
+
+# Clone git repos
+cd $HOME/develop
+git clone http://github.com/kurtamohler/spacetimelib
+cd -
 
 printf "\n\nConfiguration is complete! Please restart your machine\n"
