@@ -43,6 +43,7 @@ conda activate main
 
 # Install quarter windows GNOME extension
 gnome-extensions-cli install quarterwindows@troyready.com
+gnome-extensions enable quarterwindows@troyready.com
 
 # Configure git
 git config --global user.name "Kurt Mohler"
