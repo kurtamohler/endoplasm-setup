@@ -13,11 +13,14 @@ sudo apt install -y \
   gdb
 
 # Install wine (https://wiki.winehq.org/Ubuntu)
-sudo dpkg --add-architecture i386
-sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-sudo wget -nc -P /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo apt update -y
-sudo apt install -y --install-recommends winehq-staging
+# TODO: This doesn't work because the repository is not signed. Something must have
+#       changed with it. Look for a better solution that will be more reliable in
+#       the long run
+#sudo dpkg --add-architecture i386
+#sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+#sudo wget -nc -P /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+#sudo apt update -y
+#sudo apt install -y --install-recommends winehq-staging
 
 
 # Add default directories in `$HOME`
