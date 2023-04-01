@@ -14,8 +14,14 @@ Start with a clean installation of [`Pop!_OS 22.04 LTS
 
 ## Installation
 
-Simply run the following:
+Run the following:
 
 ```bash
 bash run.sh
 ```
+
+When prompted, enter your password and accept any EULAs.
+
+When the script is finished without error, restart your machine.
+
+If there are any errors, you gotta figure out what's wrong.

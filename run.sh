@@ -11,6 +11,9 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # Install apt packages
+
+# TODO: Unfortunately, ACCEPT_EULA does not work for the EULA of ttf-mscorefonts-installer
+#       I'd really like to solve that issue
 ACCEPT_EULA=Y sudo apt install -y \
   vim \
   ubuntu-restricted-extras \
