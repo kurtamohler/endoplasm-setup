@@ -10,4 +10,3 @@ dependencies:
   - jupyter
   - pip:
     - matplotlib
-    - gnome-extensions-cli

@@ -66,7 +66,6 @@ sudo apt update -y
 sudo apt install -y webp-pixbuf-loader
 
 # Install quarter windows GNOME extension
-#gnome-extensions-cli install quarterwindows@troyready.com
 wget -O /tmp/quarterwindows@troyready.com-v5.zip https://github.com/troyready/quarterwindows/releases/download/v5/quarterwindows@troyready.com-v5.zip
 gnome-extensions install --force /tmp/quarterwindows@troyready.com-v5.zip
 killall -SIGQUIT gnome-shell
