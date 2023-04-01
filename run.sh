@@ -28,11 +28,12 @@ ACCEPT_EULA=Y sudo apt install -y \
 # TODO: This doesn't work because the repository is not signed. Something must have
 #       changed with it. Look for a better solution that will be more reliable in
 #       the long run
-#sudo dpkg --add-architecture i386
-#sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-#sudo wget -nc -P /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-#sudo apt update -y
-#sudo apt install -y --install-recommends winehq-staging
+sudo dpkg --add-architecture i386
+sudo mkdir -pm755 /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+sudo apt update -y
+sudo apt install -y --install-recommends winehq-stable
 
 # Install vagrant
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
