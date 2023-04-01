@@ -40,6 +40,12 @@ if ! sudo dpkg -i /tmp/chrome.deb; then
   sudo apt -f install -y
 fi
 
+# Install Stream
+wget -O /tmp/steam.deb http://media.steampowered.com/client/installer/steam.deb
+if ! sudo dpkg -i /tmp/steam.deb; then
+  sudo apt -f install -y
+fi
+
 # Add default directories in `$HOME`
 mkdir -p $HOME/local
 mkdir -p $HOME/develop
