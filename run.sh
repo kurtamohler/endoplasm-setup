@@ -9,7 +9,6 @@ sudo apt upgrade -y
 sudo apt install -y \
   vim \
   ubuntu-restricted-extras \
-  vlc \
   virtualbox \
   gdb
 
