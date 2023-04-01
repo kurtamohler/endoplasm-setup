@@ -1,0 +1,6 @@
+#!/bin/bash
+
+MOUNT_POINT=$HOME/mnt/qgpu2
+
+mkdir -p $MOUNT_POINT
+sshfs kurtamohler@gpu.quansight.dev:/work2/kurtamohler/development/ $MOUNT_POINT -p 2222

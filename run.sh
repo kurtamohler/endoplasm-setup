@@ -74,4 +74,7 @@ killall -SIGQUIT gnome-shell
 sleep 10
 gnome-extensions enable quarterwindows@troyready.com
 
+# Install `~/bin` scripts
+cp -r home-bin/* $HOME/bin
+
 printf "\n\nConfiguration is complete! Please restart your machine\n"

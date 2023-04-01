@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+tail -n 100 /var/lib/upower/history-charge-GA50358-90-4CAE.dat | while read f; do TIME=$(echo $f | awk '{print $1}') ; echo $(date -d @$TIME) $f ; done

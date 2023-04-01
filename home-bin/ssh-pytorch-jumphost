@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+if [ "$#" -ne "1" ]; then
+  echo "usage: $0 [username@address from Setup SSH tab of the CI job log]"
+  exit 1
+fi
+
+ssh -J  kurtamohler@pytorch-jumphost.quansight.dev $1
