@@ -2,8 +2,8 @@
 set -e
 
 # Update apt packages
-sudo apt update
-sudo apt upgrade
+sudo apt update -y
+sudo apt upgrade -y
 
 # Install apt packages
 sudo apt install -y \
@@ -17,8 +17,8 @@ sudo apt install -y \
 sudo dpkg --add-architecture i386
 sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo wget -nc -P /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo apt update
-sudo apt install --install-recommends winehq-staging
+sudo apt update -y
+sudo apt install -y --install-recommends winehq-staging
 
 
 # Add default directories in `$HOME`
@@ -39,7 +39,7 @@ conda init
 conda activate base
 
 # Create main conda env
-conda create -n main -f config/conda-main-env.yml
+conda env create -n main -f config/conda-main-env.yml
 conda activate main
 
 # Install quarter windows GNOME extension
@@ -55,5 +55,5 @@ cat config/bashrc-additions.sh >> $HOME/.bashrc
 
 # Add webp support for image viewer
 sudo add-apt-repository ppa:helkaluin/webp-pixbuf-loader
-sudo apt update
-sudo apt install webp-pixbuf-loader
+sudo apt update -y
+sudo apt install -y webp-pixbuf-loader
