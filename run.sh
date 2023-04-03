@@ -6,6 +6,9 @@ set -e
 # Print each command before running it
 set -x
 
+# Create ssh key
+ssh-keygen -t rsa -f $HOME/.ssh/id_rsa
+
 # Update apt packages
 sudo apt update -y
 sudo apt upgrade -y
