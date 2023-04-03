@@ -9,6 +9,16 @@ set -x
 # Create ssh key
 ssh-keygen -t rsa -f $HOME/.ssh/id_rsa
 
+# Configure GNOME settings
+dconf load / < config/dconf-settings.ini
+
+# Add default directories in `$HOME`
+mkdir -p $HOME/local
+mkdir -p $HOME/develop
+mkdir -p $HOME/bin
+mkdir -p $HOME/tmp
+mkdir -p $HOME/mnt
+
 # Update apt packages
 sudo apt update -y
 sudo apt upgrade -y
@@ -55,16 +65,6 @@ wget -O /tmp/steam.deb http://media.steampowered.com/client/installer/steam.deb
 if ! sudo dpkg -i /tmp/steam.deb; then
   sudo apt -f install -y
 fi
-
-# Add default directories in `$HOME`
-mkdir -p $HOME/local
-mkdir -p $HOME/develop
-mkdir -p $HOME/bin
-mkdir -p $HOME/tmp
-mkdir -p $HOME/mnt
-
-# Configure GNOME settings
-dconf load / < config/dconf-settings.ini
 
 # Install and activate Miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
