@@ -12,6 +12,9 @@ ssh-keygen -t rsa -f $HOME/.ssh/id_rsa
 # Configure GNOME settings
 dconf load / < config/dconf-settings.ini
 
+# Copy vimrc
+cp config/vimrc $HOME/.vimrc
+
 # Add default directories in `$HOME`
 mkdir -p $HOME/local
 mkdir -p $HOME/develop
