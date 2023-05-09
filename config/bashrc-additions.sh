@@ -7,3 +7,6 @@ conda activate main
 
 # nohist command to disable history for a shell session
 alias nohist='unset HISTFILE'
+
+# Configure `detach` command to autocomplete first arg as a command name
+complete -F _command detach
