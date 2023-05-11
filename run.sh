@@ -110,8 +110,8 @@ cp -r home-bin/* $HOME/bin
 
 # Clone git repos
 cd $HOME/develop
-git clone http://github.com/kurtamohler/spacetimelib
-git clone http://github.com/kurtamohler/notes
+git@github.com:kurtamohler/spacetimelib.git
+git@github.com:kurtamohler/notes.git
 cd -
 
 printf "\n\nConfiguration is complete! Please restart your machine\n"
