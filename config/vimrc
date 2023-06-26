@@ -47,6 +47,9 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
+" Make rust file autotabs work correctly
+autocmd Filetype rust setlocal ts=2 sw=2 expandtab
+
 " Cursor motion
 set scrolloff=3
 set backspace=indent,eol,start
