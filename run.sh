@@ -38,7 +38,8 @@ ACCEPT_EULA=Y sudo apt install -y \
   gimp \
   okular \
   htop \
-  lm-sensors
+  lm-sensors \
+  7zip
 
 # Install wine (https://wiki.winehq.org/Ubuntu)
 # TODO: This doesn't work because the repository is not signed. Something must have
