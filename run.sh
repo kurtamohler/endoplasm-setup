@@ -39,7 +39,9 @@ ACCEPT_EULA=Y sudo apt install -y \
   okular \
   htop \
   lm-sensors \
-  7zip
+  7zip \
+  mpv \
+  mpv-mpris
 
 # Install wine (https://wiki.winehq.org/Ubuntu)
 # TODO: This doesn't work because the repository is not signed. Something must have
