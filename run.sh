@@ -41,7 +41,8 @@ ACCEPT_EULA=Y sudo apt install -y \
   lm-sensors \
   7zip \
   mpv \
-  mpv-mpris
+  mpv-mpris \
+  eog-plugins
 
 # Install wine (https://wiki.winehq.org/Ubuntu)
 # TODO: This doesn't work because the repository is not signed. Something must have
