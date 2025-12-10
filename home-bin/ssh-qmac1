@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh kurtamohler@us.quansight.dev -p 2223

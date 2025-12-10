@@ -7,4 +7,6 @@ if [ "$#" -ne "1" ]; then
   exit 1
 fi
 
-ssh -J  kurtamohler@pytorch-jumphost.quansight.dev $1
+#ssh -J  kurtamohler@pytorch-jumphost.quansight.dev $1
+
+ssh -J kurtamohler@pytorch-jumphost-beta.quansight.dev $1
