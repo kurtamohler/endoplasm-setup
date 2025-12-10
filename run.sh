@@ -77,10 +77,9 @@ git config --global user.email kurtamohler@gmail.com
 git config --global core.editor "vim"
 
 # Add webp support for image viewer
-# TODO: Check if this is still needed before adding back in
-#sudo add-apt-repository -y ppa:helkaluin/webp-pixbuf-loader
-#sudo apt update -y
-#sudo apt install -y webp-pixbuf-loader
+sudo add-apt-repository -y ppa:helkaluin/webp-pixbuf-loader
+sudo apt update -y
+sudo apt install -y webp-pixbuf-loader
 
 # Set default mime apps
 cp config/mimeapps.list ~/.config/mimeapps.list
