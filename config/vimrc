@@ -47,7 +47,7 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
-" Make rust file autotabs work correctly
+" I have no idea why this is necessary, but it is
 autocmd Filetype rust setlocal ts=2 sw=2 expandtab
 
 " Cursor motion
